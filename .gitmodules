@@ -1,0 +1,15 @@
+[submodule "scripts-test"]
+	path = scripts-test
+	url = https://gist.github.com/wrouesnel/8f0c681e4bf598176203.git
+[submodule "scripts-win"]
+	path = scripts-win
+	url = https://gist.github.com/wrouesnel/f5e5cc67d33db1cefdd4.git
+[submodule "bup-custom"]
+	path = bup-custom
+	url = https://github.com/wrouesnel/bup.git
+[submodule "bup"]
+	path = bup
+	url = https://github.com/bup/bup.git
+[submodule "CygwinPortable"]
+	path = CygwinPortable
+	url = https://github.com/CybeSystems/CygwinPortable.git

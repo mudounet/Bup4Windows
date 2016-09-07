@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://skywalker13.wordpress.com/xmlrpc.php">
+
+<title>Bup on Windows &#8211; Skywalker13</title>
+<script type="text/javascript">
+  WebFontConfig = {"google":{"families":["Oswald:r:latin,latin-ext"]}};
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://s1.wp.com/wp-content/plugins/custom-fonts/js/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+	})();
+</script><style id="jetpack-custom-fonts-css">.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6{font-family:"Oswald",sans-serif;font-weight:400;font-style:normal}.wf-active h1{font-size:30.1px;font-style:normal;font-weight:400}.wf-active h2{font-size:22.4px;font-style:normal;font-weight:400}.wf-active h3{font-size:14px;font-style:normal;font-weight:400}.wf-active h4{font-size:11.2px;font-style:normal;font-weight:400}.wf-active h5{font-size:9.1px;font-style:normal;font-weight:400}.wf-active h6{font-size:9.1px;font-style:normal;font-weight:400}@media screen and (min-width: 40.063em){.wf-active h1{font-size:44.1px;font-style:normal;font-weight:400}}@media screen and (min-width: 40.063em){.wf-active h2, .wf-active .single .entry-title{font-size:30.1px;font-style:normal;font-weight:400}}@media screen and (min-width: 40.063em){.wf-active h3{font-size:22.4px;font-style:normal;font-weight:400}}@media screen and (min-width: 40.063em){.wf-active h4{font-size:14px;font-style:normal;font-weight:400}}@media screen and (min-width: 40.063em){.wf-active h5{font-size:11.2px;font-style:normal;font-weight:400}}.wf-active .widget-title{font-size:11.2px;font-style:normal;font-weight:400}.wf-active .entry-title{font-size:22.4px;font-style:normal;font-weight:400}.wf-active .page-title{font-size:22.4px;font-style:normal;font-weight:400}.wf-active .site-title{font-size:44.1px;font-style:normal;font-weight:400}@media screen and (min-width: 50em){.wf-active .site-title{font-size:91px;font-style:normal;font-weight:400}}.wf-active .comments-area .comments-title{font-size:22.4px;font-style:normal;font-weight:400}</style>
+<meta name="google-site-verification" content="8YKTk9LJP4a_I-4vluQk2Zz3QnaIW8_r4D665FkpcJI" />
+<link rel='dns-prefetch' href='//s2.wp.com' />
+<link rel='dns-prefetch' href='//s1.wp.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Skywalker13 &raquo; Feed" href="https://skywalker13.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Skywalker13 &raquo; Comments Feed" href="https://skywalker13.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Skywalker13 &raquo; Bup on Windows Comments Feed" href="https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/feed/" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s1.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1473172720h&ver=4.6.1-RC1-38499"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='all-css-0' href='https://s2.wp.com/_static/??-eJx9kN1OAyEQRl9InBjrxl4Yn4WFKUs7MIQZQvr2sjXGxkZuJvNzTj4C9GIcZ8WskJop1ELMAhQvKHBGLdZdzG16diJPcIevxOFX4BDQc1NzYiLu0KMPqHOpc/XWCwTi1dIDe/eeimQVvSks+meaaY4rjn0qVncioY8WCdPAZloqy4+1t9v4g2lML4M261oqiphRU2zJ6DaCHr3vNZS2Aopr6jbkDKJXwllGwIw1jsM/7e5+po+Xw/L2/rocjsfzF5Enstc=' type='text/css' media='all' />
+<link rel='stylesheet' id='escutcheon-fonts-css'  href='https://fonts.googleapis.com/css?family=Oswald%3A400%2C300%2C700%7CAlegreya+Sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='all-css-2' href='https://s2.wp.com/_static/??-eJx9jMEKAjEMRH/IGBYq6kH8lt0Qu5G2KZuUxb+3IkhP3maY9wb3CqTFuTj6ypkNa1uQjZrTylpQCqH5KzHslTQfyeyAgkVdumi/8B2Gu9ygphalM5EVktLs0g/HAo80y/ZP3XhJGnuM2KmhfqR7vk3hdA3hcp7C8w3wf0ul' type='text/css' media='all' />
+<link rel='stylesheet' id='print-css-3' href='https://s0.wp.com/wp-content/mu-plugins/global-print/global-print.css?m=1465851035h' type='text/css' media='print' />
+<link rel='stylesheet' id='all-css-4' href='https://s1.wp.com/_static/??-eJxti0EKgCAQRS+UTYXUKjqLiakxOuIoXb9atIhaPD4P/oMjCU2xmFggVJGwWh8ZEnERGyqfgZ3KPtpnW83cwH/FpL1CgWTpLZ+oOBMMg5NgkVaF92EJcy/H7mKYhv0EZOQ3yA==' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??-eJyFj+sKwjAMhV/Irnib+kN8ll2ykto2tWkt+vR2oIJzKARy+84hkdkLdJ1JPbDUJS4Jwu2ZKs0L+QsQFlVoIlQW3QvuyEVwcWQttWhAJIbQqDIrRgPNcJ44WmAu0Mz28yR0V4T8F9MQfdOdRQDG+5dra0gJb5JCx7LUCnpKUQxkDGWZsVcQpxqb3ooApjzdi/HuSVdUJ3tcbup6u1ofdnv9AHH5hGE='></script>
+<link rel='stylesheet' id='all-css-0' href='https://s1.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1377793621h' type='text/css' media='all' />
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s1.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://skywalker13.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Koubachi Sensor Pro 2; looks good but it&#8217;s a pain to configure with the&nbsp;network' href='https://skywalker13.wordpress.com/2014/10/25/koubachi-sensor-pro-2-looks-good-but-its-a-pain-to-configure-with-the-network/' />
+<link rel='next' title='Wordwrap in javascript' href='https://skywalker13.wordpress.com/2016/02/28/wordwrap-in-javascript/' />
+<meta name="generator" content="WordPress.com" />
+<link rel="canonical" href="https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/" />
+<link rel='shortlink' href='http://wp.me/pgRFB-mZ' />
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Fskywalker13.wordpress.com%2F2016%2F02%2F06%2Fbup-on-windows%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Fskywalker13.wordpress.com%2F2016%2F02%2F06%2Fbup-on-windows%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Bup on Windows" />
+<meta property="og:url" content="https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/" />
+<meta property="og:description" content="One of the best tool that I know for incremental backups is Bup. I&#8217;m using this great project for all my backups with my Linux installation. But on the Windows side, it&#8217;s an other story…" />
+<meta property="article:published_time" content="2016-02-06T14:15:19+00:00" />
+<meta property="article:modified_time" content="2016-02-27T16:53:53+00:00" />
+<meta property="og:site_name" content="Skywalker13" />
+<meta property="og:image" content="https://skywalker13.files.wordpress.com/2016/02/cygwin.png" />
+<meta property="og:image:width" content="532" />
+<meta property="og:image:height" content="393" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@schroeterm" />
+<meta name="twitter:image" content="https://skywalker13.files.wordpress.com/2016/02/cygwin.png?w=240" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="@schroeterm" />
+<meta property="fb:app_id" content="249643311490" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/6e5e3a71a42eb3606e9a3525adc8d94d?s=32" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/6e5e3a71a42eb3606e9a3525adc8d94d?s=32" sizes="16x16" />
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/6e5e3a71a42eb3606e9a3525adc8d94d?s=114" />
+<link rel='openid.server' href='https://skywalker13.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='https://skywalker13.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="https://skywalker13.wordpress.com/osd.xml" title="Skywalker13" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+<meta name="theme-color" content="#ffffff" />
+<meta name="application-name" content="Skywalker13" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Diary of an ex-GeeXboX developer..." /><meta name="msapplication-task" content="name=Subscribe;action-uri=https://skywalker13.wordpress.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/6e5e3a71a42eb3606e9a3525adc8d94d?s=16" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="title" content="Bup on Windows | Skywalker13 on WordPress.com" />
+<meta name="description" content="One of the best tool that I know for incremental backups is Bup. I&#039;m using this great project for all my backups with my Linux installation. But on the Windows side, it&#039;s an other story. This post will explain how to deploy Bup and how to browse the snapshots with the file browser. Install the&hellip;" />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+		<script type="text/javascript" src="//c.amazon-adsystem.com/aax2/amzn_ads.js"></script>
+		<script type="text/javascript">
+		try { amznads.getAds("3033"); } catch(e) { /* ignore */ }
+		</script>
+		<script type="text/javascript">
+		try {
+			var a9_p = amznads.getKeys(),
+			_ipw_custom = {
+				wordAds: '0',
+				adSafe: '0',
+				domain: 'skywalker13.wordpress.com',
+				pageURL: 'https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/'
+			};
+			if("undefined"!=typeof a9_p&&""!=a9_p&&null!==a9_p&&"[object Array]"===Object.prototype.toString.call(a9_p)){var a="",b=0,c=a9_p.length;a9_p.sort();for(var d=0;d<c;d++){a9_p[d-b]=a9_p[d-b].replace(/a1x6p/,"a160x600p");var e=a9_p[d-b].split("p");e[0]==a&&(a9_p.splice(d-b,1),b++);a=e[0]}_ipw_custom.amznPay=a9_p};document.close();
+		} catch(e) {}
+		</script>		<!-- IPONWEB header script -->
+		<script type="text/javascript">
+			window.__ATA = {
+				scriptSrc: '//s.pubmine.com/showad.js',
+				slotPrefix: 'automattic-id-',
+				initAd: function(o) {
+					var o = o || {},
+						g = window,
+						d = g.document,
+						wr = d.write,
+						id = g.__ATA.id();
+					wr.call(d, '<div id="' + id + '" data-section="' + (o.sectionId || 0) + '"' + (o.type ? ('data-type="' + o.type + '"') : '') + ' ' + (o.forcedUrl ? ('data-forcedurl="' + o.forcedUrl + '"') : '') + ' style="width:' + (o.width || 0) + 'px; height:' + (o.height || 0) + 'px;">');
+					g.__ATA.displayAd(id);
+					wr.call(d, '</div>');
+				},
+				displayAd: function(id) {
+					window.__ATA.ids = window.__ATA.ids || {};
+					window.__ATA.ids[id] = 1;
+				},
+				customParams: _ipw_custom,
+				id: function() {
+					return window.__ATA.slotPrefix + (parseInt(Math.random() * 10000, 10) + 1 + (new Date()).getMilliseconds());
+				}
+			};
+			(function(d, ata) {
+				var pr = "https:" === d.location.protocol ? "https:" : "http:",
+					src = pr + ata.scriptSrc,
+					st = "text/javascript";
+				d.write('<scr' + 'ipt type="' + st + '" src="' + src + '"><\/scr' + 'ipt>');
+			})(window.document, window.__ATA);
+		</script>
+		<script type="text/javascript">
+		jQuery(window).ready(function () {
+			jQuery("a.wpa-about").text("About these ads");
+		});
+		</script><link rel="amphtml" href="https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/amp/" /><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style type="text/css" id="custom-colors-css">.highlander-dark #respond #comment-form-comment textarea,.highlander-dark #comment-form-share-text-padder textarea,#respond #comment-form-comment,#comment-form-share-text-padder,.highlander-dark #respond .comment-form-service,.highlander-dark #respond .comment-form-fields div.comment-form-input{text-shadow:none !important;box-shadow:none !important}.highlander-dark #respond #comment-form-comment,.highlander-dark #respond #comment-form-comment.active,.highlander-dark #comment-form-share-text-padder:active{border:4px solid}.highlander-dark #respond #comment-form-identity{border-top:0}@media screen and (max-width:50em){.main-navigation ul ul{background-color:transparent !important}}.comment-navigation a:hover,.posts-navigation a:hover,.post-navigation a:hover,.comment-navigation a:hover:visited,.posts-navigation a:hover:visited,.post-navigation a:hover:visited,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover{color:#2d2d2d}#infinite-footer,#infinite-footer .container,button,input[type="button"],input[type="reset"],input[type="submit"],.highlander-dark #respond #comment-form-comment textarea,.highlander-dark #comment-form-share-text-padder textarea,.highlander-dark #respond .comment-form-fields div.comment-form-input{color:#6d6d6d}body,button,input,select,textarea,.blog .entry-title a:hover,.archive .entry-title a:hover,.search .entry-title a:hover,h3.sd-title,.main-navigation a:hover,.main-navigation a:visited:hover,#infinite-handle span{color:#6d6d6d}.highlander-dark #respond label,.highlander-dark #respond .comment-form-service a,.highlander-dark #respond .comment-form-fields p.comment-form-posting-as,.highlander-dark #respond .comment-form-fields p.comment-form-log-out{color:#6d6d6d}.comment-navigation a,.posts-navigation a,.post-navigation a,.comment-navigation a:visited,.posts-navigation a:visited,.post-navigation a:visited{color:#6d6d6d}.entry-meta a,.entry-footer a,.entry-meta a:visited,.entry-footer a:visited,.entry-meta,.entry-footer,.main-navigation a,.main-navigation a:visited,.comments-area .comments-title,.comments-area .comment-meta a,.comments-area .comment-meta a:visited,.comments-area .comment-meta,.site-footer a,.site-footer a:visited,.page-title{color:#6d6d6d}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,textarea:focus{border-color:#aaa}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,textarea:focus,select,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus{color:#6d6d6d}#infinite-footer .blog-info a,#infinite-footer .blog-credits a,#infinite-footer .container .blog-info a,#infinite-footer .container .blog-credits a,#infinite-footer .blog-info a:hover,#infinite-footer .blog-credits a:hover,#infinite-footer .container .blog-info a:hover,#infinite-footer .container .blog-credits a:hover{color:#666}body,button,input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],select,textarea,#infinite-footer,#infinite-footer .container{background-color:#fff}.main-navigation ul ul,.single .entry-meta:before,.site-title:after,.comments-area:after,.comments-area:before,.site-footer:before,.page-header:after{background-color:#ebebeb}.main-navigation ul ul>li:first-of-type:before{border-bottom-color:#ebebeb}.highlander-dark #respond #comment-form-identity,.highlander-dark #respond #comment-form-comment,.highlander-dark #comment-form-share-text-padder,.highlander-dark #respond .comment-form-fields div.comment-form-input{background-color:#fff}blockquote,q,input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],select,textarea,input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],.comments-area .comment-list>.parent,th,td{border-color:#ebebeb}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],textarea,input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"]{color:#ebebeb}.highlander-dark #respond #comment-form-comment,.highlander-dark #respond #comment-form-comment.active,.highlander-dark #comment-form-share-text-padder:active,.highlander-dark #respond .comment-form-fields div.comment-form-input{border-color:#ebebeb}a,a:visited,a:hover,.comments-area .comment-reply-link,.comments-area .comment-reply-link:visited,.entry-meta a:hover,.entry-footer a:hover,.comments-area .comment-meta a:hover{color:#0d75a9}.jetpack-social-navigation a:hover,.site-title,.site-title a:hover,.site-title a:visited,.entry-title a,.entry-title a:visited,.entry-title{color:#20a6e8}.comment-navigation a,.posts-navigation a,.post-navigation a,button,input[type="button"],input[type="reset"],input[type="submit"],button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,button,input[type="button"],input[type="reset"],input[type="submit"],button:focus,input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,button,input[type="button"],input[type="reset"],input[type="submit"],button:active,input[type="button"]:active,input[type="reset"]:active,input[type="submit"]:active,#infinite-handle span,#infinite-handle span:hover{border-color:#20a6e8}.comment-navigation a:hover,.posts-navigation a:hover,.post-navigation a:hover{background-color:#20a6e8}.main-navigation a:after,.entry-title a:after,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover{background-color:#20a6e8}</style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script>
+</head>
+
+<body class="single single-post postid-1425 single-format-standard custom-background mp6 customizer-styles-applied highlander-enabled highlander-dark">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="navigation-wrapper">
+						<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+				<div class="menu-main-container"><ul id="menu-main" class="menu"><li id="menu-item-1412" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1412"><a href="https://skywalker13.wordpress.com">Home</a></li>
+<li id="menu-item-1414" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1414"><a href="https://skywalker13.wordpress.com/logiciels-utiles/">Useful softwares</a></li>
+<li id="menu-item-1417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1417"><a href="https://skywalker13.wordpress.com/a-propos/">About</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+		</div>
+
+		<div class="site-branding">
+									<h1 class="site-title"><a href="https://skywalker13.wordpress.com/" rel="home">Skywalker13</a></h1>
+			<h2 class="site-description">Diary of an ex-GeeXboX developer&#8230;</h2>
+		</div><!-- .site-branding -->
+
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+				<article id="post-1425" class="post-1425 post type-post status-publish format-standard hentry category-devnull tag-backup tag-bup tag-cygwin tag-fuse tag-webdav tag-windows">
+
+		<header class="entry-header">
+			<div class="entry-meta">
+				<span class="byline"> Written by <span class="author vcard"><a class="url fn n" href="https://skywalker13.wordpress.com/author/skywalker13/">Mathieu SCHROETER</a></span></span><span class="posted-on"><a href="https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/" rel="bookmark"><time class="entry-date published" datetime="2016-02-06T15:15:19+00:00">2016.02.06</time><time class="updated" datetime="2016-02-27T17:53:53+00:00">2016.02.27</time></a></span>			</div><!-- .entry-meta -->
+			<h1 class="entry-title">Bup on Windows</h1>		</header><!-- .entry-header -->
+
+		
+		<div class="entry-wrapper">
+
+			<div class="entry-content">
+				<p>One of the best tool that I know for incremental backups is <a href="https://bup.github.io"><strong>Bup</strong></a>. I&#8217;m using this great project for all my backups with my Linux installation. But on the Windows side, it&#8217;s an other story. This post will explain how to deploy <strong>Bup</strong> and how to browse the snapshots with the file<br />
+browser.</p>
+<h2>Install the environment</h2>
+<h3>Cygwin</h3>
+<p>The first step is to install the <a href="https://www.cygwin.com/"><strong>Cygwin</strong></a> environment because <strong>Bup</strong> is written mainly for Unix OSes.</p>
+<p>Download the <strong>Cygwin</strong> installer: <a href="https://www.cygwin.com/setup-x86_64.exe">setup-x86_64.exe</a></p>
+<p>Follow the steps, then you should see this screen:</p>
+<p><img src="https://skywalker13.files.wordpress.com/2016/02/cygwin.png?w=756" alt="cygwin.png" /></p>
+<p>You must install the following packages: <strong>python</strong> (2.7), <strong>python-setuptools</strong>, <strong>git</strong>, <strong>make</strong>, <strong>sync</strong>, <strong>gcc-core</strong> (4.x), <strong>perl</strong>, <strong>par2</strong></p>
+<p>Then you will have all the necessary tools in order to build and use <strong>Bup</strong>.</p>
+<p>Open the <strong>Cygwin</strong> terminal and execute this script in the shell:</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ echo &quot;export SHELLOPTS
+set -o igncr&quot; &gt;&gt; ~/.bash_profile
+</pre>
+<p>It fixes a problem with the scripts where a <code>\r</code> (carriage return) exists for each line.</p>
+<h3>Python</h3>
+<p><strong>Bup</strong> wants <strong>tornado</strong> for it&#8217;s web server. Then you must install the package manager <strong>pip</strong> and then, <strong>tornado</strong>.</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ python -m ensurepip
+$ pip install tornado
+</pre>
+<h2>Build Bup</h2>
+<p>The environment is installed, it&#8217;s the time to build <strong>Bup</strong>.</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ git clone https://github.com/bup/bup.git
+$ cd bup
+$ git checkout 0.27
+$ make
+</pre>
+<p>Checkout the last release. Don&#8217;t use the <code>HEAD</code> of master because it can be unsafe for your backup.</p>
+<h3>Install</h3>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ make install DESTDIR=/opt/bup PREFIX=&#039;&#039;
+$ export PATH=/opt/bup/bin:$PATH
+$ echo &quot;export PATH=/opt/bup/bin:$PATH&quot; &gt;&gt; ~/.bash_profile
+</pre>
+<p>If the build succeeds, you can install <strong>Bup</strong> in <code>/opt/bup</code> and update the <code>PATH</code> environment variable.</p>
+<p>You can check if <strong>Bup</strong> is working with this simple command:</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ bup --version
+0.27
+</pre>
+<h2>Use Bup</h2>
+<p>The first step is to initialize a <strong>Bup</strong> repository. Note that <strong>Bup</strong> uses the same packfile format of <strong>Git</strong>. Then the repository is initialized like with <strong>Git</strong>.</p>
+<blockquote><p>
+  <strong>Bup</strong> uses <strong>Git</strong>, but it improves the way how the big files are stored. <strong>Git</strong> is not efficient with binary files, then <strong>Bup</strong> split the files in smaller chunks with it&#8217;s own mechanism. But the repository is still readable with the common <strong>Git</strong> commands. The files just look different.
+</p></blockquote>
+<p>For my backups, I use a drive <code>z:</code>, then I configure <strong>Bup</strong> in order to initialize the repository on this drive.</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ export BUP_DIR=/cygdrive/z/bup
+$ echo &quot;export BUP_DIR=/cygdrive/z/bup&quot; &gt;&gt; ~/.bash_profile
+$ bup init
+</pre>
+<h3>Backup</h3>
+<p>Very well, it&#039;s time to backup something.</p>
+<ul>
+<li>The first step is to generate the index.</li>
+<li>The second step is to save the files in a branch.</li>
+<li>And the last step is to generate the files for the parity with the great <strong>par2</strong> tool.</li>
+</ul>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ bup index /cygdrive/c/foobar
+$ bup save -n foobar /cygdrive/c/foobar
+$ bup fsck -g
+</pre>
+<blockquote><p>
+  The last step is very slow, at least for the first time. The parity uses ~10% of the backup size. It&#8217;s very important to do this step, it prevents corruptions like &#8220;bit rot&#8221;.
+</p></blockquote>
+<h3>See the snapshots</h3>
+<p>There are several ways in order to work with the <strong>Bup</strong>&#8216;s snapshots. Just read the manual for that. But an easy way is to use the web interface provided by <strong>Bup</strong>.</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ bup web
+Serving HTTP on 127.0.0.1:8080...
+</pre>
+<h3>Well, but what about Fuse?</h3>
+<p>Yes, it&#8217;s the main problem on Windows. There is no easy way in order to have a file system in user space like the great <a href="https://en.wikipedia.org/wiki/Filesystem_in_Userspace"><strong>Fuse</strong></a> on Linux. And of course, <strong>Bup</strong> supports <strong>Fuse</strong>. It&#8217;s the one of the main reasons why <strong>Bup</strong> is better on Linux.</p>
+<p>Someone has done the work for adding webdav to the web server.</p>
+<p>The first step is to install the <strong>Cygwin</strong> package <strong>python-lxml</strong>; then you must build a fork of <strong>Bup</strong> 0.27 which adds the webdav support.</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ git remote add webdav https://github.com/wrouesnel/bup.git
+$ git fetch webdav bup-web-improvements
+$ git checkout bup-web-improvements
+$ make
+$ make install DESTDIR=/opt/bup PREFIX=&#039;&#039;
+$ bup web
+</pre>
+<p>Then now you can map a network drive to the following address: <code><a href="http://127.0.0.1:8080" rel="nofollow">http://127.0.0.1:8080</a></code></p>
+<p>Have fun!</p>
+<blockquote><p>
+  Yes, it&#8217;s not perfect and it&#8217;s seems that this feature is a bit bugged because it&#8217;s not working fine with non-ascii 7 bits characters. This problem doesn&#8217;t exists with <strong>Fuse</strong>.</p>
+<p>  Please remember that the webdav support is not official. It&#8217;s at your own risk.
+</p></blockquote>
+		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<a class="wpa-about" href="https://wordpress.com/about-these-ads/" rel="nofollow"></a>
+				<div class="u">
+					<script type='text/javascript'>
+					(function(g){g.__ATA.initAd({sectionId:26942, width:300, height:250});})(window);
+					</script>
+				</div>
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sharedaddy-dark sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-1425" class="share-facebook sd-button share-icon" href="https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/?share=facebook" target="_blank" title="Share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-1425" class="share-twitter sd-button share-icon" href="https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-email"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon" href="https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/?share=email" target="_blank" title="Click to email"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-4019559-1425-57cfd65d87df3' data-src='//widgets.wp.com/likes/#blog_id=4019559&amp;post_id=1425&amp;origin=skywalker13.wordpress.com&amp;obj_id=4019559-1425-57cfd65d87df3' data-name='like-post-frame-4019559-1425-57cfd65d87df3'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div></div>							</div><!-- .entry-content -->
+
+			<footer class="entry-footer">
+				<span class="cat-links">Posted in <a href="https://skywalker13.wordpress.com/category/devnull/" rel="category tag">/dev/null</a>.</span><span class="tags-links">Tagged <a href="https://skywalker13.wordpress.com/tag/backup/" rel="tag">backup</a>, <a href="https://skywalker13.wordpress.com/tag/bup/" rel="tag">bup</a>, <a href="https://skywalker13.wordpress.com/tag/cygwin/" rel="tag">cygwin</a>, <a href="https://skywalker13.wordpress.com/tag/fuse/" rel="tag">fuse</a>, <a href="https://skywalker13.wordpress.com/tag/webdav/" rel="tag">webdav</a>, <a href="https://skywalker13.wordpress.com/tag/windows/" rel="tag">Windows</a>.</span>			</footer><!-- .entry-footer -->
+
+			
+<div id="comments" class="comments-area">
+
+	
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2016/02/06/bup-on-windows/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="https://skywalker13.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="0bdff62f77" /><input type="hidden" name="_wp_http_referer" value="/2016/02/06/bup-on-windows/" />
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest" />
+
+<div class="comment-form-field comment-textarea">
+	<label for="comment">Enter your comment here...</label>
+	<div id="comment-form-comment"><textarea id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="https://public-api.wordpress.com/connect/?googleplus-sign-in=https%3A%2F%2Fskywalker13.wordpress.com" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25" alt="Gravatar" width="25" class="no-grav" />
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value="" /></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25" alt="WordPress.com Logo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" />
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25" alt="Twitter picture" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" />
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25" alt="Facebook photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" />
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25" alt="Google+ photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" />
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"/> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog"  style="display: inline;">Notify me of new posts via email.</label></p></div>
+
+
+
+
+<p class="form-submit"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1425' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="39dde1fc47" /></p>
+<input type="hidden" name="genseq" value="1473238621" />
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="136"/></p>				</form>
+					</div><!-- #respond -->
+		<div style="clear: both"></div>
+</div><!-- #comments -->
+
+		</div>
+
+		<div class="sidebar">
+			
+<div id="secondary" class="widget-area" role="complementary">
+	<aside id="gravatar-4" class="widget widget_gravatar"><p><img alt='' src='https://1.gravatar.com/avatar/d4be2af9a8c02ddaa79d2de987ad91c4?s=64&#038;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D64&#038;r=G' class='avatar avatar-64 grav-widget-left' height='64' width='64'  style="margin-top: 3px; padding: 0 0.5em 0 0; float: left" /></p>
+</aside><aside id="search-2" class="widget widget_search"><h1 class="widget-title">::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</h1><form role="search" method="get" class="search-form" action="https://skywalker13.wordpress.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside><aside id="blog-stats-2" class="widget widget_blog-stats"><h1 class="widget-title"> </h1>		<ul>
+			<li>42,910 Willowisps</li>
+		</ul>
+		</aside></div><!-- #secondary -->
+		</div><!-- .sidebar -->
+
+	</article><!-- #post-## -->
+			
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://skywalker13.wordpress.com/2014/10/25/koubachi-sensor-pro-2-looks-good-but-its-a-pain-to-configure-with-the-network/" rel="prev">Previous Post <span class="screen-reader-text">Koubachi Sensor Pro 2; looks good but it&#8217;s a pain to configure with the&nbsp;network</span></a></div><div class="nav-next"><a href="https://skywalker13.wordpress.com/2016/02/28/wordwrap-in-javascript/" rel="next">Next Post <span class="screen-reader-text">Wordwrap in javascript</span></a></div></div>
+	</nav>
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+
+		<div class="site-info">
+	<a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com.</a>
+	
+	</div><!-- .site-info -->
+
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<!-- wpcom_wp_footer -->
+<script type='text/javascript' src='//0.gravatar.com/js/gprofiles.js?ver=201636y'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781h'></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-d4be2af9a8c02ddaa79d2de987ad91c4">
+	</div>
+	</div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/skywalker13.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/skywalker13.wordpress.com\/wp-login.php?action=logout&_wpnonce=72fa688168","homeURL":"https:\/\/skywalker13.wordpress.com\/","postID":"1425","gravDefault":"mystery","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1462457903j'></script>
+
+	<div id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id='bsub-text'>Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow &ldquo;Skywalker13&rdquo;</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+						<p class="bit-follow-count">Join 142 other followers</p>
+			<p><input type="email" name="email" placeholder="Enter your email address" id="loggedout-follow-field"/></p>
+
+			<input type="hidden" name="action" value="subscribe"/>
+			<input type="hidden" name="blog_id" value="4019559"/>
+			<input type="hidden" name="source" value="https://skywalker13.wordpress.com/2016/02/06/bup-on-windows/"/>
+			<input type="hidden" name="sub-type" value="loggedout-follow"/>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="96b3b76257" /><input type="hidden" name="_wp_http_referer" value="/2016/02/06/bup-on-windows/" />
+			<p id='bsub-subscribe-button'><input type="submit" value="Sign me up" /></p>
+			</form>
+					<div id='bsub-credit'><a href="https://wordpress.com/?ref=lof">Build a website with WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/skywalker13.wordpress.com\/2016\/02\/06\/bup-on-windows\/":1425};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="/2016/02/06/bup-on-windows/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" />
+			<script> document.getElementById('jetpack-source_f_name').value = ''; </script>
+			<div class="recaptcha" id="sharing_recaptcha"></div><input type="hidden" name="recaptcha_public_key" id="recaptcha_public_key" value="6LcYW8MSAAAAADBAuEH9yaPcF7lWh11Iq62ZKtoo" />
+			<img style="float: right; display: none" class="loading" src="https://s2.wp.com/wp-content/mu-plugins/post-flair/sharing/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/akismet-3.0/_inc/form.js?m=1404442431h'></script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??-eJzTLy/QTc7PK0nNK9EvyClNz8wr1i+uzCtJrMjITM/IAeKS1CJMEWP94uSizIISoOIM5/yiVL2sYh19yo1yKioFEonFGUDz7HNtDU2MjIxNjAyNTbIA0Es/9Q=='></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414h&amp;ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJyVj8ESgjAMRH/IEnUETo7fUkuggTatTYv696IzOoyePOWwb3ezcI3KBM7IGUaBDmcyGG/VKBtYSb6o6MpALOBoQoFLwYJWc+cwfcPZol+QWM6AYko2FgODFsEszxLWMw06U+B/nTJRVI54Un0wRVRPn0+JjSsdvjATvF/iVMLo7pWnn57VnBgkq95pSiBWJ+LhfRfTyR93h3Zfb5umbscHytdvyw=='></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<iframe src='https://widgets.wp.com/likes/master.html?ver=20160429#ver=20160429' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+		<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script>
+			var _comscore = _comscore || [];
+			_comscore.push({
+				c1: "2",
+				c2: "7518284"
+			});
+			(function() {
+				var s = document.createElement("script"),
+					el = document.getElementsByTagName("script")[0];
+				s.async = true;
+				s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+				el.parentNode.insertBefore(s, el);
+			})();
+		</script>
+		<noscript>
+			<p class="robots-nocontent"><img src="https://sb.scorecardresearch.com/p?c1=2&c2=7518284&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" alt="" style="display:none;" width="1" height="1" /></p>
+		</noscript><script src="//stats.wp.com/w.js?54" type="text/javascript" async defer></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'4019559','blog_tz':'1','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'4019559','v':'wpcom','tz':'1','user_id':'0','post':'1425','subd':'skywalker13'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWFnNncxc1tjZG9XVXhRLDd1cH5qamxuMVpwUW9HQzRuYXNQam5pdDk9Q1NPMlFYW1pBXzBRckMwaEpqcE4lS09yZnJKPzdaU25DeCVddjh5fEhbelRSNm45Q21kN1lZLU5XNHE3UV85ZXV8blRISjJZc18sUnlmbVJKclM0REVDK29Gel1ZUDFfW1M2T1d8X3pYN2pFMlgrWiZzfEhFY2lxVlhia0N6cFs2aSY2WDlKZlBqU2V+UWh2OFlJeFR4VU4yJXR1XTVVJitURD0tV35LVTJhfiVbOHlaNHNQTW5RP2xEY3ZxVGFZfF9QTDI4bEpSYV1oWmVDLEJFNUxubWQrNzM/ZmlhQk0='}]);
+_stq.push([ 'clickTrackerInit', '4019559', '1425' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+</body>
+</html>
